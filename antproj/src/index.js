@@ -3,35 +3,55 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'antd/dist/antd.css';
 import reportWebVitals from './reportWebVitals';
-import { Layout,Input } from 'antd';
+import { Layout,Input,Menu } from 'antd';
+import { UploadOutlined, UserOutlined, VideoCameraOutlined,Icon } from '@ant-design/icons';
+
 
 const { Search } = Input;
-const { Header, Footer } = Layout;
+const { Header, Content, Footer, Sider} = Layout;
 
 const onSearch = value => console.log(value);
 
 ReactDOM.render(
   <>
     <>
-    <Layout className="layout">
-    <Header>
-      <h4
-       className="title"
-       style={{ color: 'white'}}>Superhero Search</h4>
-    </Header>
-    <br></br>
-    <Image
-        width='auto'
-        src={`https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?${random}`}
-  
-      />
-    <Search
-      placeholder="Search Superhero"
+    <Layout className="Layout">
+    <Sider
+      breakpoint="lg"
+      collapsedWidth="0"
+      onBreakpoint={broken => {
+        console.log(broken);
+      }}
+      onCollapse={(collapsed, type) => {
+        console.log(collapsed, type);
+      }}
+    >
+      <div className="logo" />
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
+      {/* <Menu.Item key="1" icon={<UserOutlined />}> */}
+        <Menu.Item key="1">
+       Superhero Search
+        </Menu.Item>
+        
+      </Menu>
+    </Sider>
+    <Layout >
+      <Header className="site-layout-sub-header-background" />
+  <div className='main-image'>
+      <Content style={{ margin: '24px 16px 0' }}>
+        
+          <Search
+      placeholder="Search"
       allowClear
       onSearch={onSearch}
-      style={{ width: 'auto', margin: '0 10px', paddingLeft: '100px'}} 
+      className="search-superhero"
     />
-    {/* <Footer style={{ textAlign: 'center' }}>Search App Footer</Footer> */}
+       
+      </Content>
+      </div>
+      <br />  
+      <Footer style={{ textAlign: 'center' }}>Superhero App</Footer>
+    </Layout>
   </Layout>,
   </>,
     
