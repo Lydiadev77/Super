@@ -20,6 +20,11 @@ ReactDOM.render(
        style={{ color: 'white'}}>Superhero Search</h4>
     </Header>
     <br></br>
+    <Image
+        width='auto'
+        src={`https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?${random}`}
+  
+      />
     <Search
       placeholder="Search Superhero"
       allowClear
