@@ -32,6 +32,10 @@ ReactDOM.render(
         <Menu.Item key="1">
        Superhero Search
         </Menu.Item>
+        <Menu.Item key="2">
+       Superhero List
+       {/* <Link to="/list" /> */}
+        </Menu.Item>
         
       </Menu>
     </Sider>
